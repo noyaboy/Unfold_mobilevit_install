@@ -1,6 +1,6 @@
 # Unfold_mobilevit_install
 If encounters ValueError: Task image-classification is not compatible with this dataset! Available tasks: [] <br>
-edit train.py [159]
+comment task="image-classification" in train.py [159]
 ```
 if args.dataset_name is not None:
     # dataset = load_dataset(args.dataset_name, task="image-classification")
@@ -18,7 +18,7 @@ else:
         # task="image-classification",
     )
 ```
-search ["labels"] and edit:
+then search ["labels"] and edit it to ["label"]:
 ```
 labels = dataset["train"].features["label"].names
 ```
